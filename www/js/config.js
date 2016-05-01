@@ -1,54 +1,79 @@
 var MEETINGS = {
     APP_NAME: "meetings",
-    MESSAGES : "MEETINGS_MESSAGES",
-    DATAFORMAT : "MMM Do YYYY, h:mm:ss A",
+    MESSAGES: "MEETINGS_MESSAGES",
+    DATAFORMAT: "MMM Do YYYY, h:mm:ss A",
     MODULE_NAMES: {
         CONTROLLERS: "meetings.controllers",
         FACTORIES: "meetings.factories",
-        DIRECTIVES : "meetings.directives",
+        DIRECTIVES: "meetings.directives",
         UTILS: "meetings.utils",
-        MESSAGES : "meetings.messages",
-        LOGGER : "Logger",
-        LOCAL_STORAGE : "LocalStorage"
+        MESSAGES: "meetings.messages",
+        LOGGER: "Logger",
+        LOCAL_STORAGE: "LocalStorage"
     },
-    CONTROLLERS : {
-        DashboardController : "DashboardController",
+    CONTROLLERS: {
+        DashboardController: "DashboardController",
         SideMenuController: "SideMenuController",
+        MeetingsController: "MeetingsController",
+        MeetingDetailController: "MeetingDetailController",
+        MOMController: "MOMController",
+        AgendaController: "AgendaController",
         AboutUsController: "AboutUsController"
     },
-    FACTORIES :  {
+    FACTORIES: {
         MeetingsFactory: "MeetingsFactory",
-        Logger : "Logger",
-        LocalStorage : "LocalStorage"
+        Logger: "Logger",
+        LocalStorage: "LocalStorage"
     },
     STATES: {
         SIDE_MENU: {
             name: 'app',
             url: '/app',
             templateUrl: 'templates/menu.html',
-            controller: 'SideMenuController',
-            cache: true
+            controller: 'SideMenuController'
         },
         DASHBOARD: {
             name: 'app.dashboard',
             url: '/dashboard',
             templateUrl: 'templates/dashboard.html',
-            controller: 'DashboardController',
-            cache: false
+            controller: 'DashboardController'
+        },
+        MEETINGS: {
+            name: 'app.meetings',
+            url: '/meetings',
+            templateUrl: 'templates/meeting-list.html',
+            controller: 'MeetingsController'
+        },
+        MEETINGDETAIL: {
+            name: 'app.meetingDetail',
+            url: '/{meetingId:int}',
+            templateUrl: 'templates/meeting-detail.html',
+            controller: 'MeetingDetailController'
+        },
+        MOM: {
+            name: 'app.mom',
+            url: '/mom',
+            templateUrl: 'templates/mom.html',
+            controller: 'MOMController'
+        },
+        AGENDA: {
+            name: 'app.agenda',
+            url: '/agenda',
+            templateUrl: 'templates/agenda.html',
+            controller: 'AgendaController'
         },
         ABOUTUS: {
             name: 'app.aboutus',
             url: '/aboutus',
             templateUrl: 'templates/aboutus.html',
-            controller: 'AboutUsController',
-            cache: true
+            controller: 'AboutUsController'
         }
     },
     BACK_END: {
         RootURL: "http://45.118.182.64/Boardmeeting/BMmeeting.asmx",
         MethodName: {
-            "getMeetingList" : "GetMeetingList",
-            "getMeetingByMeetingCode" : "GetMeetingByMeetingCode"
+            "getMeetingList": "GetMeetingList",
+            "getMeetingByMeetingCode": "GetMeetingByMeetingCode"
         },
         RequestType: {
             GET: "GET",
@@ -58,14 +83,14 @@ var MEETINGS = {
             SUCCESS: "success",
             ERROR: "error"
         },
-        ERROR_CODES : {
-            NETWORK_ERROR : "NETWORK_ERROR",
-            UNAUTHORIZED : "UNAUTHORIZED"
+        ERROR_CODES: {
+            NETWORK_ERROR: "NETWORK_ERROR",
+            UNAUTHORIZED: "UNAUTHORIZED"
         }
     },
-    LOCAL_STORAGE : {
-        KEYS : {
-            USER : "USER",
+    LOCAL_STORAGE: {
+        KEYS: {
+            USER: "USER",
         }
     }
 };
