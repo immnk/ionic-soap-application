@@ -1,7 +1,7 @@
 <ion-view view-title="Meetings">
     <ion-content>
         <ul class="list">
-            <li class="item" ng-repeat="meeting in meetings">
+            <li class="item" ng-repeat="meeting in meetings" ui-sref="app.meetingDetail({meetingId: meeting.id})">
                 <h3>{{ meeting.name }}</h3>
                 <p>{{ meeting.subject }}</p>
                 <p>{{ meeting.meetingTime }}</p>
