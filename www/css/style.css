@@ -1,1 +1,53 @@
-/* Empty. Add your own CSS if you like */
+@font-face {
+  font-family: Montserrat;
+  src: url(../assets/fonts/Montserrat-Regular.otf); }
+@font-face {
+  font-family: Lato;
+  src: url(../assets/fonts/Lato-Regular.ttf); }
+body {
+  font-family: "Montserrat", "sans-serif"; }
+
+ion-side-menus ion-side-menu-content .bar-bottom {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 44px; }
+  ion-side-menus ion-side-menu-content .bar-bottom .bar-header {
+    color: white;
+    background: #2A5A8B;
+    /* The Fallback */
+    background: rgba(42, 90, 139, 0.65); }
+    ion-side-menus ion-side-menu-content .bar-bottom .bar-header .button {
+      color: #FFF; }
+    ion-side-menus ion-side-menu-content .bar-bottom .bar-header .title {
+      color: #FFF; }
+ion-side-menus ion-content {
+  top: 0px !important;
+  background: rgba(42, 90, 128, 0.15) url("../img/Background.jpg");
+  background: url("../img/Background.jpg"), -webkit-gradient(linear, left top, left bottom, from(rgba(42, 90, 139, 0.15)), to(rgba(42, 90, 139, 0.15)));
+  background: url("../img/Background.jpg"), -moz-linear-gradient(center top, rgba(42, 90, 139, 0.15) 0%, rgba(42, 90, 139, 0.15) 100%);
+  background: url("../img/Background.jpg"), -moz-gradient(center top, rgba(42, 90, 139, 0.15) 0%, rgba(42, 90, 139, 0.15) 100%);
+  background-size: cover; }
+ion-side-menus .tabs {
+  top: 0; }
+ion-side-menus .has-tabs {
+  bottom: 44px;
+  top: 49px !important; }
+
+.dashboard-wrapper {
+  color: #2A5A8B;
+  display: flex;
+  justify-content: center; }
+  .dashboard-wrapper .dashboard-item {
+    width: 180px;
+    height: 180px;
+    text-align: center;
+    background: #FFF;
+    /* The Fallback */
+    background: rgba(255, 255, 255, 0.8);
+    margin: 10px;
+    border-radius: 50px; }
+    .dashboard-wrapper .dashboard-item i {
+      font-size: 144px; }
+
+/*# sourceMappingURL=style.css.map */

@@ -33,6 +33,15 @@ angular.module(MEETINGS.APP_NAME, ['ionic','ionic.service.core',  'ionic.service
                     }
                 }
             })
+            .state(MEETINGS.STATES.CONDUCT.name, {
+                url: MEETINGS.STATES.CONDUCT.url,
+                views: {
+                    'menuContent': {
+                        templateUrl: MEETINGS.STATES.CONDUCT.templateUrl,
+                        controller: MEETINGS.STATES.CONDUCT.controller
+                    }
+                }
+            })
             .state(MEETINGS.STATES.MEETINGS.name, {
                 url: MEETINGS.STATES.MEETINGS.url,
                 views: {
@@ -49,12 +58,22 @@ angular.module(MEETINGS.APP_NAME, ['ionic','ionic.service.core',  'ionic.service
                         templateUrl: MEETINGS.STATES.MEETINGDETAIL.templateUrl,
                         controller: MEETINGS.STATES.MEETINGDETAIL.controller
                     }
+                },
+                abstract: true
+            })
+            .state(MEETINGS.STATES.DETAIL.name, {
+                url: MEETINGS.STATES.DETAIL.url,
+                views: {
+                    'tab-detail': {
+                        templateUrl: MEETINGS.STATES.DETAIL.templateUrl,
+                        controller: MEETINGS.STATES.DETAIL.controller
+                    }
                 }
             })
             .state(MEETINGS.STATES.MOM.name, {
                 url: MEETINGS.STATES.MOM.url,
                 views: {
-                    'menuContent': {
+                    'tab-mom': {
                         templateUrl: MEETINGS.STATES.MOM.templateUrl,
                         controller: MEETINGS.STATES.MOM.controller
                     }
@@ -63,7 +82,7 @@ angular.module(MEETINGS.APP_NAME, ['ionic','ionic.service.core',  'ionic.service
             .state(MEETINGS.STATES.AGENDA.name, {
                 url: MEETINGS.STATES.AGENDA.url,
                 views: {
-                    'menuContent': {
+                    'tab-agenda': {
                         templateUrl: MEETINGS.STATES.AGENDA.templateUrl,
                         controller: MEETINGS.STATES.AGENDA.controller
                     }

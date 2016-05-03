@@ -1,0 +1,33 @@
+ion-side-menus {
+    ion-side-menu-content {
+        .bar-bottom {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 44px;
+            .bar-header {
+                color: white;
+                @include background-opacity($theme-background, 0.65);
+                .button {
+                    color: $theme-foreground;
+                }
+                .title {
+                    color: $theme-foreground;
+                }
+            }
+        }
+    }
+    ion-content {
+        top: 0px !important;
+        @include vertical-gradient-with-image(url('../img/Background.jpg'),
+        $theme-background-overlay,
+        $theme-background-overlay);
+    }
+    .tabs {
+        top: 0;
+    }
+    .has-tabs {
+        bottom: 44px;
+        top: 49px !important;
+    }
+}

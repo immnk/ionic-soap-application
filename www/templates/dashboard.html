@@ -1,10 +1,10 @@
 <ion-view view-title="Dashboard">
     <ion-content>
-        <ul class="list">
-            <li class="item" ng-repeat="state in states" ui-sref="{{ state.state }}">
+        <div class="dashboard-wrapper">
+            <div class="dashboard-item" ng-repeat="state in states" ui-sref="{{ state.state }}">
                 <i class="{{ state.icon }}"></i>
-                {{ state.name }}
-            </li>
-        </ul>
+                <div class="name">{{ state.name }}</div>
+            </div>
+        </div>
     </ion-content>
 </ion-view>

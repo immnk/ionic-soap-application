@@ -1,0 +1,16 @@
+.dashboard-wrapper {
+    color: $theme-background;
+    display: flex;
+    justify-content: center;
+    .dashboard-item {
+        width: 180px;
+        height: 180px;
+        text-align: center;
+        @include background-opacity($theme-foreground, 0.8);
+        margin: 10px;
+        border-radius: 50px;
+        i{
+        	font-size: 144px;
+        }
+    }
+}

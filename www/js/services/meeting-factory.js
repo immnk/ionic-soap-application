@@ -5,24 +5,35 @@ MeetingsFactory.inject = ['$soap', '$q', 'utils'];
 function MeetingsFactory($soap, $q, utils) {
     var service = {};
 
+    service.meetingCode = 1;
     service.getMeetingList = getMeetingList;
     service.getMeetingByCode = getMeetingByCode;
+    service.getCurrentMeetingCode = getCurrentMeetingCode;
+    service.setCurrentMeetingCode = setCurrentMeetingCode;
+
+    function getCurrentMeetingCode(){
+        return service.meetingCode;
+    }
+
+    function setCurrentMeetingCode(meetingCode){
+        service.meetingCode = meetingCode;
+    }
 
     function getMeetingList() {
         var deferred = $q.defer();
 
         $soap.post(MEETINGS.BACK_END.RootURL, MEETINGS.BACK_END.MethodName.getMeetingList)
             .then(function(response) {
-                utils.Logger.success(response);
+                // utils.Logger.success(response);
 
                 var x2js = new X2JS();
                 var aftCnv = x2js.xml_str2json(response);
 
                 if (aftCnv.DataSet.diffgram.NewDataSet) {
                     var meetings = aftCnv.DataSet.diffgram.NewDataSet.Meeting;
-                    utils.Logger.debug(meetings);
-
                     var result = [];
+                    // utils.Logger.debug(meetings);
+                    
                     for (i = 0; i < meetings.length; i++) {
                         var temp = meetings[i];
                         var meeting = {};
@@ -71,9 +82,47 @@ function MeetingsFactory($soap, $q, utils) {
 
                 if(aftCnv.DataSet.diffgram.NewDataSet){
                     var meetingDetail = aftCnv.DataSet.diffgram.NewDataSet;
-                    utils.Logger.success(meetingDetail);
+                    var result = {};
+                    utils.Logger.debug(meetingDetail);
 
-                    deferred.resolve(meetingDetail);
+                    if(meetingDetail.Agenda){
+                        if(meetingDetail.Agenda.constructor === Array){
+                            result.Agenda = meetingDetail.Agenda;
+                        }else{
+                            result.Agenda = [];
+                            result.Agenda.push(meetingDetail.Agenda);
+                        }
+                    } else{
+                        result.Agenda = [];
+                    }
+
+                    if(meetingDetail.Minutes){
+                        if(meetingDetail.Minutes.constructor === Array){
+                            result.Minutes = meetingDetail.Minutes;
+                        }else{
+                            result.Minutes = [];
+                            result.Minutes.push(meetingDetail.Minutes);
+                        }
+                    } else{
+                        result.Minutes = [];
+                    }
+
+                    result.Meeting = meetingDetail.Meeting ? meetingDetail.Meeting : {};
+                    result.MeetingExternalUser = meetingDetail.MeetingExternalUser ? meetingDetail.MeetingExternalUser : {};
+                    
+                    if(meetingDetail.MeetingParticipant){
+                        if(meetingDetail.MeetingParticipant.constructor === Array){
+                            result.MeetingParticipant = meetingDetail.Minutes;
+                        }else{
+                            result.MeetingParticipant = [];
+                            result.MeetingParticipant.push(meetingDetail.Minutes);
+                        }
+                    } else{
+                        result.MeetingParticipant = [];
+                    }
+
+                    utils.Logger.success(result);
+                    deferred.resolve(result);
                 } else{
                     utils.Logger.error(aftCnv);
                     deferred.reject('Invalid response');

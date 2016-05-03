@@ -13,9 +13,11 @@ var MEETINGS = {
     },
     CONTROLLERS: {
         DashboardController: "DashboardController",
+        ConductMeetingController: "ConductMeetingController",
         SideMenuController: "SideMenuController",
         MeetingsController: "MeetingsController",
         MeetingDetailController: "MeetingDetailController",
+        DetailTabController: "DetailTabController",
         MOMController: "MOMController",
         AgendaController: "AgendaController",
         AboutUsController: "AboutUsController"
@@ -38,6 +40,12 @@ var MEETINGS = {
             templateUrl: 'templates/dashboard.html',
             controller: 'DashboardController'
         },
+        CONDUCT: {
+            name: 'app.conduct',
+            url: '/conduct',
+            templateUrl: 'templates/conduct.html',
+            controller: 'ConductMeetingController'
+        },
         MEETINGS: {
             name: 'app.meetings',
             url: '/meetings',
@@ -46,18 +54,24 @@ var MEETINGS = {
         },
         MEETINGDETAIL: {
             name: 'app.meetingDetail',
-            url: '/{meetingId:int}',
+            url: '/tabs',
             templateUrl: 'templates/meeting-detail.html',
             controller: 'MeetingDetailController'
         },
+        DETAIL: {
+            name: 'app.meetingDetail.detail',
+            url: '/detail',
+            templateUrl: 'templates/detail.html',
+            controller: 'DetailTabController'
+        },
         MOM: {
-            name: 'app.mom',
+            name: 'app.meetingDetail.mom',
             url: '/mom',
             templateUrl: 'templates/mom.html',
             controller: 'MOMController'
         },
         AGENDA: {
-            name: 'app.agenda',
+            name: 'app.meetingDetail.agenda',
             url: '/agenda',
             templateUrl: 'templates/agenda.html',
             controller: 'AgendaController'

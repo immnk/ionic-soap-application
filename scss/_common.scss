@@ -1,0 +1,38 @@
+$theme-background: #2A5A8B;
+$theme-background-overlay: rgba(42, 90, 139, 0.15);
+$theme-foreground: #FFF;
+$font-Lato: "Lato", "sans-serif";
+$font-montserrat: "Montserrat", "sans-serif";
+
+@mixin background-opacity($color, $opacity: 0.3) {
+    background: $color; /* The Fallback */
+    background: rgba($color, $opacity);
+}
+
+@mixin box-shadow($horizontal: 0px, $vertical: 2px, $blur: 5px, $color: rgba(0, 0, 0, 0.5)) {
+    -webkit-box-shadow: $horizontal $vertical $blur $color;
+    -moz-box-shadow: $horizontal $vertical $blur $color;
+    box-shadow: $horizontal $vertical $blur $color;
+}
+
+@mixin vertical-gradient-with-image($image, $start: #000, $stop: #FFF) {
+    background: ($start + $stop) / 2 $image;
+    background: $image, -webkit-gradient(linear, left top, left bottom, from($start), to($stop));
+    background: $image, -moz-linear-gradient(center top, $start 0%, $stop 100%);
+    background: $image, -moz-gradient(center top, $start 0%, $stop 100%);
+    background-size: cover;
+}
+
+@font-face {
+    font-family: Montserrat;
+    src: url(../assets/fonts/Montserrat-Regular.otf);
+}
+
+@font-face {
+    font-family: Lato;
+    src: url(../assets/fonts/Lato-Regular.ttf);
+}
+
+body{
+    font-family: $font-montserrat;
+}
