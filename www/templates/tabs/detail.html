@@ -1,60 +1,59 @@
 <ion-view view-title="Meeting Detail">
     <ion-content class="detail-content">
         <div class="meetings-wrapper">
-            <div class="meeting-item">
-                <div class="subject">{{ meeting.content.Meeting.Subject }}</div>
-                <div class="meeting-attribute-wrapper">
-                    <div class="meeting-attribute">
-                        <div class="attribute_name">Venue</div>
-                        <div class="attribute_value">{{ meeting.content.Meeting.Venue }}</div>
-                    </div>
-                    <div class="meeting-attribute">
-                        <div class="attribute_name">Date</div>
-                        <div class="attribute_value">{{ meeting.content.Meeting.MeetingTime }}</div>
-                    </div>
-                    <div class="meeting-attribute">
-                        <div class="attribute_name">Meeting Name</div>
-                        <div class="attribute_value">{{ meeting.content.Meeting.MeetingName }}</div>
-                    </div>
-                    <div class="meeting-attribute">
-                        <div class="attribute_name">Meeting Number</div>
-                        <div class="attribute_value">{{ meeting.content.Meeting.MeetingNumber }}</div>
-                    </div>
-                    <div class="meeting-attribute">
-                        <div class="attribute_name">Meeting Status Code</div>
-                        <div class="attribute_value">{{ meeting.content.Meeting.MeetingStatusCode }}</div>
-                    </div>
-                    <div class="meeting-attribute">
-                        <div class="attribute_name">Subscription code </div>
-                        <div class="attribute_value">{{ meeting.content.Meeting.SubscriptionCode }}</div>
-                    </div>
-                    <div class="meeting-attribute">
-                        <div class="attribute_name">Created user code </div>
-                        <div class="attribute_value">{{ meeting.content.Meeting.CreatedUserCode }}</div>
-                    </div>
-                    <div class="meeting-attribute">
-                        <div class="attribute_name">Project code </div>
-                        <div class="attribute_value">{{ meeting.content.Meeting.ProjectCode }}</div>
-                    </div>
+            <div class="subject">{{ meeting.content.Meeting.Subject }}</div>
+            <div class="meeting-attribute-wrapper">
+                <div class="meeting-attribute">
+                    <div class="attribute_name">Venue</div>
+                    <div class="attribute_value">{{ meeting.content.Meeting.Venue }}</div>
                 </div>
-                <div class="participation_wrapper">
-                    <div class="participant" ng-repeat="Participant in meeting.content.MeetingParticipant">
-                        <div class="meeting-attribute">
-                            <div class="attribute_name">Username</div>
-                            <div class="attribute_value">{{ Participant.UserName }}</div>
-                        </div>
-                        <div class="meeting-attribute">
-                            <div class="attribute_name">Participant code</div>
-                            <div class="attribute_value">{{ Participant.ParticipantCode }}</div>
-                        </div>
-                        <div class="meeting-attribute">
-                            <div class="attribute_name">Mandatory participant</div>
-                            <div class="attribute_value">{{ Participant.IsMandatoryParticipant }}</div>
-                        </div>
-                        <div class="meeting-attribute">
-                            <div class="attribute_name">Manager</div>
-                            <div class="attribute_value">{{ participant.IsManageUser }}</div>
-                        </div>
+                <div class="meeting-attribute">
+                    <div class="attribute_name">Date</div>
+                    <div class="attribute_value">{{ meeting.content.Meeting.MeetingTime }}</div>
+                </div>
+                <div class="meeting-attribute">
+                    <div class="attribute_name">Meeting Name</div>
+                    <div class="attribute_value">{{ meeting.content.Meeting.MeetingName }}</div>
+                </div>
+                <div class="meeting-attribute">
+                    <div class="attribute_name">Meeting Number</div>
+                    <div class="attribute_value">{{ meeting.content.Meeting.MeetingNumber }}</div>
+                </div>
+                <div class="meeting-attribute">
+                    <div class="attribute_name">Meeting Status Code</div>
+                    <div class="attribute_value">{{ meeting.content.Meeting.MeetingStatusCode }}</div>
+                </div>
+                <div class="meeting-attribute">
+                    <div class="attribute_name">Subscription code </div>
+                    <div class="attribute_value">{{ meeting.content.Meeting.SubscriptionCode }}</div>
+                </div>
+                <div class="meeting-attribute">
+                    <div class="attribute_name">Created user code </div>
+                    <div class="attribute_value">{{ meeting.content.Meeting.CreatedUserCode }}</div>
+                </div>
+                <div class="meeting-attribute">
+                    <div class="attribute_name">Project code </div>
+                    <div class="attribute_value">{{ meeting.content.Meeting.ProjectCode }}</div>
+                </div>
+            </div>
+            <div class="header">Participants</div>
+            <div class="participation_wrapper">
+                <div class="participant" ng-repeat="Participant in meeting.content.MeetingParticipant">
+                    <div class="meeting-attribute">
+                        <div class="attribute_name">Username</div>
+                        <div class="attribute_value">{{ Participant.UserName }}</div>
+                    </div>
+                    <div class="meeting-attribute">
+                        <div class="attribute_name">Participant code</div>
+                        <div class="attribute_value">{{ Participant.ParticipantCode }}</div>
+                    </div>
+                    <div class="meeting-attribute">
+                        <div class="attribute_name">Mandatory participant</div>
+                        <div class="attribute_value">{{ Participant.IsMandatoryParticipant }}</div>
+                    </div>
+                    <div class="meeting-attribute">
+                        <div class="attribute_name">Manager</div>
+                        <div class="attribute_value">{{ participant.IsManageUser }}</div>
                     </div>
                 </div>
             </div>

@@ -1,11 +1,13 @@
 $theme-background: #2A5A8B;
-$theme-background-overlay: rgba(42, 90, 139, 0.15);
+$theme-background-overlay: rgba(42, 90, 139, 0.2);
 $theme-foreground: #FFF;
+// $theme-color-complement-two: #EFEFEF;
+// $theme-border: #EFEFEF;
 $font-Lato: "Lato", "sans-serif";
 $font-montserrat: "Montserrat", "sans-serif";
-
 @mixin background-opacity($color, $opacity: 0.3) {
-    background: $color; /* The Fallback */
+    background: $color;
+    /* The Fallback */
     background: rgba($color, $opacity);
 }
 
@@ -16,10 +18,9 @@ $font-montserrat: "Montserrat", "sans-serif";
 }
 
 @mixin vertical-gradient-with-image($image, $start: #000, $stop: #FFF) {
-    background: ($start + $stop) / 2 $image;
-    background: $image, -webkit-gradient(linear, left top, left bottom, from($start), to($stop));
-    background: $image, -moz-linear-gradient(center top, $start 0%, $stop 100%);
-    background: $image, -moz-gradient(center top, $start 0%, $stop 100%);
+    background: $theme-background;
+    background: -webkit-gradient($start, $stop), $image no-repeat;
+    background: linear-gradient($start, $stop), $image no-repeat;
     background-size: cover;
     background-attachment: fixed;
 }
@@ -34,11 +35,12 @@ $font-montserrat: "Montserrat", "sans-serif";
     src: url(../assets/fonts/Lato-Regular.ttf);
 }
 
-body{
+body {
     font-family: $font-montserrat;
 }
-.background{
+
+.background {
     @include vertical-gradient-with-image(url('../img/Background.jpg'),
-    $theme-background-overlay,
-    $theme-background-overlay);
+    rgba(42, 90, 139, 0.3),
+    rgba(42, 90, 139, 0.5));
 }

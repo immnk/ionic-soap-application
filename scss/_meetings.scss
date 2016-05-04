@@ -21,11 +21,60 @@ ion-tabs {
     @extend .background;
 }
 
+.meeting-attribute {
+    border-bottom: 1px solid $theme-background;
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    &:nth-child(odd) {
+        // background: $theme-color-complement-two;
+        @include background-opacity($theme-background, 0.5);
+    }
+    &:last-child {
+        border-bottom: 0px;
+    }
+    .attribute {
+        display: table-cell;
+        width: 50%;
+        vertical-align: middle;
+        padding: 10px;
+        overflow-wrap: break-word;
+    }
+    .attribute_name {
+        @extend .attribute;
+        font-weight: bold;
+        text-transform: capitalize;
+    }
+    .attribute_value {
+        @extend .attribute;
+        text-align: left;
+        font-family: $font-Lato;
+    }
+}
+
 .detail-content {
     @extend .background;
     .meetings-wrapper {
         min-height: calc( 100vh - 44px - 49px);
         color: $theme-foreground;
+        .subject {
+            text-align: center;
+            font-size: 26px;
+            font-weight: bold;
+            padding: 10px 0;
+        }
+        .meeting-attribute-wrapper {
+            margin: 0 10px;
+        }
+        .header {
+            text-align: center;
+            font-size: 26px;
+            font-weight: bold;
+            padding: 10px 0;
+        }
+        .participation_wrapper {
+            margin: 0 10px;
+        }
     }
 }
 
@@ -42,5 +91,13 @@ ion-tabs {
     .mom-wrapper {
         min-height: calc( 100vh - 44px - 49px);
         color: $theme-foreground;
+    }
+    .mom-attribute-wrapper {
+        .header {
+            text-align: center;
+            font-size: 26px;
+            font-weight: bold;
+            padding: 10px 0;
+        }
     }
 }
