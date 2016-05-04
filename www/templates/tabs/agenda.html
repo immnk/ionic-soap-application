@@ -1,0 +1,15 @@
+<ion-view view-title="Agenda">
+    <ion-content>
+        <div class="agenda-wrapper">
+            <div class="list">
+                <div class="item" ng-repeat="agenda in meeting.content.Agenda">
+                    <div class="name">{{ agenda.SubjectCategoryName }}</div>
+                    <div class="description" ng-bind-html="agenda.SubjectDesc"></div>
+                    <div class="number">{{ agenda.SubjectNumber }}</div>
+                    <div class="subName">{{ agenda.SubjectName }}</div>
+                    <div class="venue">{{ agenda.SubjectAgendaNumber }}</div>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

@@ -61,19 +61,19 @@ var MEETINGS = {
         DETAIL: {
             name: 'app.meetingDetail.detail',
             url: '/detail',
-            templateUrl: 'templates/detail.html',
+            templateUrl: 'templates/tabs/detail.html',
             controller: 'DetailTabController'
         },
         MOM: {
             name: 'app.meetingDetail.mom',
             url: '/mom',
-            templateUrl: 'templates/mom.html',
+            templateUrl: 'templates/tabs/mom.html',
             controller: 'MOMController'
         },
         AGENDA: {
             name: 'app.meetingDetail.agenda',
             url: '/agenda',
-            templateUrl: 'templates/agenda.html',
+            templateUrl: 'templates/tabs/agenda.html',
             controller: 'AgendaController'
         },
         ABOUTUS: {

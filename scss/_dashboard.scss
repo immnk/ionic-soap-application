@@ -1,8 +1,6 @@
 .dashboard-wrapper {
-    min-height: calc( 100vh - 44px);
-    @include vertical-gradient-with-image(url('../img/Background.jpg'),
-    $theme-background-overlay,
-    $theme-background-overlay);
+    @extend .background;
+    min-height: calc(100vh - 44px);
     color: $theme-background;
     .dashboard-item-wrapper {
         display: flex;
@@ -15,13 +13,22 @@
         .dashboard-item {
             width: 180px;
             height: 180px;
+            color: $theme-background;
             text-align: center;
             @include background-opacity($theme-foreground,
             0.8);
+            @include box-shadow();
             margin: 10px;
             border-radius: 50px;
+            transition: all ease-in .1s;
             i {
                 font-size: 144px;
+            }
+            &:active {
+                @include box-shadow(2px,
+                10px,
+                10px);
+                transform: translateY(5px);
             }
         }
     }

@@ -7,7 +7,7 @@ ion-side-menus {
             bottom: 44px;
             .bar-header {
                 color: white;
-                @include background-opacity($theme-background, 0.65);
+                background: $theme-background;
                 .button {
                     color: $theme-foreground;
                 }
@@ -18,23 +18,34 @@ ion-side-menus {
         }
     }
     ion-side-menu {
-        .menu-list {
-            .list {
-                ion-item {
-                    .item-content {
-                        i {
-                            padding: 0 10px 0 0;
+        .menu-bottom {
+            top: initial !important;
+            bottom: 0px;
+            .menu-list {
+                .list {
+                    ion-item {
+                        .item-content {
+                            i {
+                                padding: 0 10px 0 0;
+                            }
                         }
                     }
                 }
+            }
+            .avatar {
+                width: 100px;
+                height: 100px;
+                background: #EEE url('../img/ben.png');
+                background-size: cover;
+                border-radius: 50%;
+                @include box-shadow();
+                margin: 10px auto;
             }
         }
     }
     ion-content {
         top: 0px !important;
-    }
-    .tabs {
-        top: 0;
+        bottom: 44px !important;
     }
     .has-tabs {
         bottom: 44px;

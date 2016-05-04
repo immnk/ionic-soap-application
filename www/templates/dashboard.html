@@ -2,10 +2,10 @@
     <ion-content>
         <div class="dashboard-wrapper">
             <div class="dashboard-item-wrapper">
-                <div class="dashboard-item" ng-repeat="state in states" ui-sref="{{ state.state }}">
+                <a class="dashboard-item" ng-repeat="state in states" ui-sref="{{ state.state }}" ontouchstart="return true;">
                     <i class="{{ state.icon }}"></i>
                     <div class="name">{{ state.name }}</div>
-                </div>
+                </a>
             </div>
         </div>
     </ion-content>

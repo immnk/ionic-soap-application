@@ -1,6 +1,36 @@
+ion-tabs {
+    .tabs {
+        top: 0;
+        background: $theme-background;
+        .tab-item {
+            transition: 0.5s ease;
+            border-bottom: 2.5px solid transparent;
+            color: $theme-foreground;
+            &.tab-item-active {
+                color: $theme-foreground;
+                border-bottom: 2.5px solid $theme-foreground;
+            }
+            .tab-title {
+                font-family: $font-Lato;
+            }
+        }
+    }
+}
+
 .meetings-wrapper {
-    min-height: calc( 100vh - 44px);
-    @include vertical-gradient-with-image(url('../img/Background.jpg'),
-    $theme-background-overlay,
-    $theme-background-overlay);
+    @extend .background;
+    min-height: calc( 100vh - 44px - 49px);
+    color: $theme-foreground;
+}
+
+.agenda-wrapper {
+    @extend .background;
+    min-height: calc( 100vh - 44px - 49px);
+    color: $theme-foreground;
+}
+
+.mom-wrapper {
+    @extend .background;
+    min-height: calc( 100vh - 44px - 49px);
+    color: $theme-foreground;
 }
