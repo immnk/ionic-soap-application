@@ -1,9 +1,11 @@
 <ion-view view-title="Dashboard">
     <ion-content>
         <div class="dashboard-wrapper">
-            <div class="dashboard-item" ng-repeat="state in states" ui-sref="{{ state.state }}">
-                <i class="{{ state.icon }}"></i>
-                <div class="name">{{ state.name }}</div>
+            <div class="dashboard-item-wrapper">
+                <div class="dashboard-item" ng-repeat="state in states" ui-sref="{{ state.state }}">
+                    <i class="{{ state.icon }}"></i>
+                    <div class="name">{{ state.name }}</div>
+                </div>
             </div>
         </div>
     </ion-content>

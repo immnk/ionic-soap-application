@@ -1,12 +1,18 @@
 <ion-view view-title="Meetings">
     <ion-content>
-        <ul class="list">
-            <li class="item" ng-repeat="meeting in meetings" ng-click="navigateState(meeting.id)">
-                <h3>{{ meeting.name }}</h3>
-                <p>{{ meeting.subject }}</p>
-                <p>{{ meeting.meetingTime }}</p>
-                <p>{{ meeting.venue }}</p>
-            </li>
-        </ul>
+        <div class="meetings-wrapper">
+            <div class="list">
+                <div class="card" ng-repeat="meeting in meetings" ng-click="navigateState(meeting.id)">
+                    <div class="item item-divider">
+                        {{ meeting.name }}
+                    </div>
+                    <div class="item item-text-wrap">
+                        <p>{{ meeting.subject }}</p>
+                        <p>{{ meeting.meetingTime }}</p>
+                        <p>{{ meeting.venue }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </ion-content>
 </ion-view>

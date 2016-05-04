@@ -3,12 +3,12 @@ controllers.controller(MEETINGS.CONTROLLERS.DetailTabController, DetailTabContro
 DetailTabController.inject = ['$scope'];
 
 function DetailTabController($scope){
-	$scope.meeting = {
-		content: {
-			Meeting: {
+	// $scope.meeting = {
+	// 	content: {
+	// 		Meeting: {
 				
-			}
-		}
-	};
-	$scope.meet = $scope.meeting.content.Meeting;
+	// 		}
+	// 	}
+	// };
+	// $scope.meet = $scope.meeting.content.Meeting;
 }

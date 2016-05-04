@@ -1,0 +1,6 @@
+.meetings-wrapper {
+    min-height: calc( 100vh - 44px);
+    @include vertical-gradient-with-image(url('../img/Background.jpg'),
+    $theme-background-overlay,
+    $theme-background-overlay);
+}
