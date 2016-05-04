@@ -17,20 +17,30 @@ ion-tabs {
     }
 }
 
-.meetings-wrapper {
+.meeting-list-content {
     @extend .background;
-    min-height: calc( 100vh - 44px - 49px);
-    color: $theme-foreground;
 }
 
-.agenda-wrapper {
+.detail-content {
     @extend .background;
-    min-height: calc( 100vh - 44px - 49px);
-    color: $theme-foreground;
+    .meetings-wrapper {
+        min-height: calc( 100vh - 44px - 49px);
+        color: $theme-foreground;
+    }
 }
 
-.mom-wrapper {
+.agenda-content {
     @extend .background;
-    min-height: calc( 100vh - 44px - 49px);
-    color: $theme-foreground;
+    .agenda-wrapper {
+        min-height: calc( 100vh - 44px - 49px);
+        color: $theme-foreground;
+    }
+}
+
+.mom-content {
+    @extend .background;
+    .mom-wrapper {
+        min-height: calc( 100vh - 44px - 49px);
+        color: $theme-foreground;
+    }
 }

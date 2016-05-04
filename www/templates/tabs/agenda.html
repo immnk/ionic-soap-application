@@ -1,13 +1,70 @@
 <ion-view view-title="Agenda">
-    <ion-content>
+    <ion-content class="agenda-content">
         <div class="agenda-wrapper">
-            <div class="list">
-                <div class="item" ng-repeat="agenda in meeting.content.Agenda">
-                    <div class="name">{{ agenda.SubjectCategoryName }}</div>
-                    <div class="description" ng-bind-html="agenda.SubjectDesc"></div>
+            <div class="agenda-attribute-wrapper">
+                <div class="agenda" ng-repeat="agenda in meeting.content.Agenda">
+                    <div class="agenda-attribute">
+                        <div class="attribute-name">Subject Agenda Number</div>
+                        <div class="attribute-value">{{ agenda.SubjectAgendaNumber }}</div>
+                    </div>
+                    <div class="agenda-attribute">
+                        <div class="attribute-name">Subject Code</div>
+                        <div class="attribute-value">{{ agenda.SubjectCode }}</div>
+                    </div>
+                    <div class="agenda-attribute">
+                        <div class="attribute-name">Department code</div>
+                        <div class="attribute-value">{{ agenda.DepartmentCode }}</div>
+                    </div>
+                    <div class="agenda-attribute">
+                        <div class="attribute-name">Subject Category code</div>
+                        <div class="attribute-value">{{ agenda.SubjectCategoryCode }}</div>
+                    </div>
+                    <div class="agenda-attribute">
+                        <div class="attribute-name">Subject Category name</div>
+                        <div class="attribute-value">{{ agenda.SubjectCategoryName }}</div>
+                    </div>
+                    <div class="agenda-attribute">
+                        <div class="attribute-name">Subject Name</div>
+                        <div class="attribute-value">{{ agenda.SubjectName }}</div>
+                    </div>
+                    <div class="agenda-attribute">
+                        <div class="attribute-name">Subject Number</div>
+                        <div class="attribute-value">{{ agenda.SubjectNumber }}</div>
+                    </div>
+                    <div class="agenda-attribute">
+                        <div class="attribute-name">Subject Description</div>
+                        <div class="attribute-value" ng-bind-html="agenda.SubjectDesc"></div>
+                    </div>
+                    <div class="agenda-attribute">
+                        <div class="attribute-name">Approval Status</div>
+                        <div class="attribute-value">{{ agenda.ApprovalStatus }}</div>
+                    </div>
+                    <div class="agenda-attribute">
+                        <div class="attribute-name">Is Active</div>
+                        <div class="attribute-value">{{ agenda.IsActive }}</div>
+                    </div>
+                    <div class="agenda-attribute">
+                        <div class="attribute-name">Approval Status Description</div>
+                        <div class="attribute-value">{{ agenda.ApprovalStatusDesc }}</div>
+                    </div>
+                    <div class="agenda-attribute">
+                        <div class="attribute-name">Subject priority order</div>
+                        <div class="attribute-value">{{ agenda.SubjectPriorityOrder }}</div>
+                    </div>
+                    <div class="agenda-attribute">
+                        <div class="attribute-name">Is Subject Agenda</div>
+                        <div class="attribute-value">{{ agenda.IsSubjectAgenda }}</div>
+                    </div>
+                    <div class="agenda-attribute">
+                        <div class="attribute-name">Department name</div>
+                        <div class="attribute-value">{{ agenda.DepartmentName }}</div>
+                    </div>
+                    
+                    <!-- <div class="name">{{ agenda.SubjectCategoryName }}</div>
+                    <div class="description"></div>
                     <div class="number">{{ agenda.SubjectNumber }}</div>
                     <div class="subName">{{ agenda.SubjectName }}</div>
-                    <div class="venue">{{ agenda.SubjectAgendaNumber }}</div>
+                    <div class="venue"></div> -->
                 </div>
             </div>
         </div>

@@ -21,6 +21,7 @@ $font-montserrat: "Montserrat", "sans-serif";
     background: $image, -moz-linear-gradient(center top, $start 0%, $stop 100%);
     background: $image, -moz-gradient(center top, $start 0%, $stop 100%);
     background-size: cover;
+    background-attachment: fixed;
 }
 
 @font-face {

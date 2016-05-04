@@ -107,15 +107,26 @@ function MeetingsFactory($soap, $q, utils) {
                         result.Minutes = [];
                     }
 
+                    if(meetingDetail.ToDoList){
+                        if(meetingDetail.ToDoList.constructor === Array){
+                            result.ToDoList = meetingDetail.ToDoList;
+                        }else{
+                            result.ToDoList = [];
+                            result.ToDoList.push(meetingDetail.ToDoList);
+                        }
+                    } else{
+                        result.ToDoList = [];
+                    }
+
                     result.Meeting = meetingDetail.Meeting ? meetingDetail.Meeting : {};
                     result.MeetingExternalUser = meetingDetail.MeetingExternalUser ? meetingDetail.MeetingExternalUser : {};
                     
                     if(meetingDetail.MeetingParticipant){
                         if(meetingDetail.MeetingParticipant.constructor === Array){
-                            result.MeetingParticipant = meetingDetail.Minutes;
+                            result.MeetingParticipant = meetingDetail.MeetingParticipant;
                         }else{
                             result.MeetingParticipant = [];
-                            result.MeetingParticipant.push(meetingDetail.Minutes);
+                            result.MeetingParticipant.push(meetingDetail.MeetingParticipant);
                         }
                     } else{
                         result.MeetingParticipant = [];

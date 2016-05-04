@@ -1,11 +1,82 @@
-<ion-view view-title="MOM">
-    <ion-content>
+<ion-view view-title="Minutes of Meeting">
+    <ion-content class="mom-content">
         <div class="mom-wrapper">
-            <div class="list">
-                <div class="item" ng-repeat="minutes in meeting.content.Minutes">
-                    <div class="name">{{ minutes.MeetingMinutesDetailDesc }}</div>
-                    <div class="name">{{ minutes.MeetingCode }}</div>
-                    <div class="name">{{ minutes.MeetingMinutesDetailCode }}</div>
+            <div class="mom-attribute-wrapper">
+                <div class="mom-name">Minutes of Meeting</div>
+                <div class="mom" ng-repeat="minutes in meeting.content.Minutes">
+                    <div class="mom-attribute">
+                        <div class="mom-attribute-name">Subject Code</div>
+                        <div class="mom-attribute-value">{{ minutes.SubjectCode }}</div>
+                    </div>
+                    <div class="mom-attribute">
+                        <div class="mom-attribute-name">Meeting Code</div>
+                        <div class="mom-attribute-value">{{ minutes.MeetingCode }}</div>
+                    </div>
+                    <div class="mom-attribute">
+                        <div class="mom-attribute-name">Meeting Minutes detail code</div>
+                        <div class="mom-attribute-value">{{ minutes.MeetingMinutesDetailCode }}</div>
+                    </div>
+                    <div class="mom-attribute">
+                        <div class="mom-attribute-name">Meeting Minutes details description</div>
+                        <div class="mom-attribute-value">{{ minutes.MeetingMinutesDetailDesc }}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="mom-attribute-wrapper">
+                <div class="mom-name">To do list</div>
+                <div class="todo" ng-repeat="todo in meeting.content.ToDoList">
+                    <div class="mom-attribute">
+                        <div class="mom-attribute-name">To do list code</div>
+                        <div class="mom-attribute-value">{{ todo.ToDoListCode }}</div>
+                    </div>
+                    <div class="mom-attribute">
+                        <div class="mom-attribute-name">to do description</div>
+                        <div class="mom-attribute-value">{{ todo.ToDoDescription }}</div>
+                    </div>
+                    <div class="mom-attribute">
+                        <div class="mom-attribute-name">reference type</div>
+                        <div class="mom-attribute-value">{{ todo.ReferenceType }}</div>
+                    </div>
+                    <div class="mom-attribute">
+                        <div class="mom-attribute-name">is active</div>
+                        <div class="mom-attribute-value">{{ todo.IsActive }}</div>
+                    </div>
+                    <div class="mom-attribute">
+                        <div class="mom-attribute-name">assigned to</div>
+                        <div class="mom-attribute-value">{{ todo.AsignedTo }}</div>
+                    </div>
+                    <div class="mom-attribute">
+                        <div class="mom-attribute-name">percentage of finish</div>
+                        <div class="mom-attribute-value">{{ todo.PercentageOfFinish }}</div>
+                    </div>
+                    <div class="mom-attribute">
+                        <div class="mom-attribute-name">subscription code</div>
+                        <div class="mom-attribute-value">{{ todo.SubscriptionCode }}</div>
+                    </div>
+                    <div class="mom-attribute">
+                        <div class="mom-attribute-name">to do list reference code</div>
+                        <div class="mom-attribute-value">{{ todo.ToDoListRefCode }}</div>
+                    </div>
+                    <div class="mom-attribute">
+                        <div class="mom-attribute-name">Created by </div>
+                        <div class="mom-attribute-value">{{ todo.CreatedBy }}</div>
+                    </div>
+                    <div class="mom-attribute">
+                        <div class="mom-attribute-name">action taken</div>
+                        <div class="mom-attribute-value">{{ todo.ActionTacken }}</div>
+                    </div>
+                    <div class="mom-attribute">
+                        <div class="mom-attribute-name">username</div>
+                        <div class="mom-attribute-value">{{ todo.UserName }}</div>
+                    </div>
+                    <div class="mom-attribute">
+                        <div class="mom-attribute-name">status</div>
+                        <div class="mom-attribute-value">{{ todo.Status }}</div>
+                    </div>
+                    <div class="mom-attribute">
+                        <div class="mom-attribute-name">Finished By</div>
+                        <div class="mom-attribute-value">{{ todo.FinishedBy }}</div>
+                    </div>
                 </div>
             </div>
         </div>
