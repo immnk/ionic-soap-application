@@ -58,7 +58,9 @@ function Core() {
         }
 
         function hideSpinner() {
-            $timeout($ionicLoading.hide(), 1000);
+            $timeout(function() {
+                $ionicLoading.hide(); 
+            }, 1000);
         }
 
         function callBackend(requestType, methodName, requestData, headers) {

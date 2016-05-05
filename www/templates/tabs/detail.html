@@ -4,6 +4,10 @@
             <div class="header">{{ meeting.content.Meeting.Subject | notapplicable }}</div>
             <div class="meeting-attribute-wrapper">
                 <div class="meeting-attribute">
+                    <div class="attribute_name">Meeting Name</div>
+                    <div class="attribute_value">{{ meeting.content.Meeting.MeetingName | notapplicable }}</div>
+                </div>
+                <div class="meeting-attribute">
                     <div class="attribute_name">Venue</div>
                     <div class="attribute_value">{{ meeting.content.Meeting.Venue | notapplicable }}</div>
                 </div>
@@ -11,30 +15,27 @@
                     <div class="attribute_name">Date</div>
                     <div class="attribute_value">{{ meeting.content.Meeting.MeetingTime | notapplicable }}</div>
                 </div>
-                <div class="meeting-attribute">
-                    <div class="attribute_name">Meeting Name</div>
-                    <div class="attribute_value">{{ meeting.content.Meeting.MeetingName | notapplicable }}</div>
-                </div>
+                
                 <div class="meeting-attribute">
                     <div class="attribute_name">Meeting Number</div>
                     <div class="attribute_value">{{ meeting.content.Meeting.MeetingNumber | notapplicable }}</div>
                 </div>
-                <div class="meeting-attribute">
+                <!-- <div class="meeting-attribute">
                     <div class="attribute_name">Meeting Status Code</div>
                     <div class="attribute_value">{{ meeting.content.Meeting.MeetingStatusCode | notapplicable }}</div>
-                </div>
-                <div class="meeting-attribute">
+                </div> -->
+                <!-- <div class="meeting-attribute">
                     <div class="attribute_name">Subscription code </div>
                     <div class="attribute_value">{{ meeting.content.Meeting.SubscriptionCode | notapplicable }}</div>
-                </div>
-                <div class="meeting-attribute">
+                </div> -->
+                <!-- <div class="meeting-attribute">
                     <div class="attribute_name">Created user code </div>
                     <div class="attribute_value">{{ meeting.content.Meeting.CreatedUserCode | notapplicable }}</div>
-                </div>
-                <div class="meeting-attribute">
+                </div> -->
+                <!-- <div class="meeting-attribute">
                     <div class="attribute_name">Project code </div>
                     <div class="attribute_value">{{ meeting.content.Meeting.ProjectCode | notapplicable }}</div>
-                </div>
+                </div> -->
             </div>
             <div class="header">Participants</div>
             <div class="participation_wrapper">
@@ -43,10 +44,10 @@
                         <div class="attribute_name">Username</div>
                         <div class="attribute_value">{{ Participant.UserName | notapplicable }}</div>
                     </div>
-                    <div class="meeting-attribute">
+                    <!-- <div class="meeting-attribute">
                         <div class="attribute_name">Participant code</div>
                         <div class="attribute_value">{{ Participant.ParticipantCode | notapplicable }}</div>
-                    </div>
+                    </div> -->
                     <div class="meeting-attribute">
                         <div class="attribute_name">Mandatory participant</div>
                         <div class="attribute_value">{{ Participant.IsMandatoryParticipant | notapplicable }}</div>

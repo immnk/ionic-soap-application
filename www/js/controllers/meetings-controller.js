@@ -39,7 +39,7 @@ function MeetingDetailController($scope, utils, MeetingsFactory) {
 
     function init() {
         utils.Logger.debug(MEETINGS.CONTROLLERS.MeetingDetailController + ' - : init');
-        // utils.showSpinner();
+        utils.showSpinner();
         
         $scope.meeting.subject = "Meeting detail";
         var meetingCode = MeetingsFactory.getCurrentMeetingCode();
@@ -48,11 +48,11 @@ function MeetingDetailController($scope, utils, MeetingsFactory) {
         
         MeetingsFactory.getMeetingByCode(meetingCode).then(function(response) {
             $scope.meeting.content = response;
-            // utils.hideSpinner();
+            utils.hideSpinner();
             utils.Logger.debug(MEETINGS.CONTROLLERS.MeetingDetailController + ' - got meeting details.');
         }, function(error) {
             utils.Logger.debug(MEETINGS.CONTROLLERS.MeetingDetailController + ' - error in getting meeting details');
-            // utils.hideSpinner();
+            utils.hideSpinner();
             utils.showAlert(utils.MEETINGS_MESSAGES.NETWORK_ERROR, error);
         });
     }

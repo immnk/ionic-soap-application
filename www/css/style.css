@@ -19,7 +19,8 @@ body {
   font-size: 26px;
   font-weight: bold;
   padding: 10px 0;
-  text-transform: capitalize; }
+  text-transform: capitalize;
+  line-height: 26px; }
 
 ion-side-menus ion-side-menu-content .bar-bottom {
   position: absolute;
@@ -114,7 +115,7 @@ ion-tabs .tabs {
   .meeting-attribute:nth-child(odd) {
     background: #2A5A8B;
     /* The Fallback */
-    background: rgba(42, 90, 139, 0.5); }
+    background: rgba(42, 90, 139, 0.15); }
   .meeting-attribute:last-child {
     border-bottom: 0px; }
   .meeting-attribute .attribute, .meeting-attribute .attribute_name, .meeting-attribute .attribute_value {
@@ -137,7 +138,7 @@ ion-tabs .tabs {
     min-height: calc( 100vh - 44px - 49px);
     color: #FFF; }
     .detail-content .meetings-wrapper .meeting-attribute-wrapper {
-      margin: 0 10px; }
+      margin: 0; }
     .detail-content .meetings-wrapper .participation_wrapper {
       margin: 0 10px; }
       .detail-content .meetings-wrapper .participation_wrapper .participant {
@@ -151,6 +152,10 @@ ion-tabs .tabs {
   .agenda-content .agenda-wrapper {
     min-height: calc( 100vh - 44px - 49px);
     color: #FFF; }
+    .agenda-content .agenda-wrapper .agenda-attribute-wrapper .agenda {
+      border-bottom: 1px solid #FFF;
+      border-top: 2.5px solid #FFF;
+      margin: 10px 0; }
 
 .mom-content {
   bottom: 44px !important;

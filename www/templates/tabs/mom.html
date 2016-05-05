@@ -4,51 +4,63 @@
             <div class="mom-attribute-wrapper">
                 <div class="header">Minutes of Meeting</div>
                 <div class="mom" ng-repeat="minutes in meeting.content.Minutes">
-                    <div class="meeting-attribute">
+                    <!-- <div class="meeting-attribute">
                         <div class="attribute_name">Subject Code</div>
                         <div class="attribute_value">{{ minutes.SubjectCode | notapplicable }}</div>
                     </div>
                     <div class="meeting-attribute">
                         <div class="attribute_name">Meeting Code</div>
                         <div class="attribute_value">{{ minutes.MeetingCode | notapplicable }}</div>
-                    </div>
-                    <div class="meeting-attribute">
+                    </div> -->
+                    <!-- <div class="meeting-attribute">
                         <div class="attribute_name">Meeting Minutes detail code</div>
                         <div class="attribute_value">{{ minutes.MeetingMinutesDetailCode | notapplicable }}</div>
+                    </div> -->
+                    <div class="meeting-attribute">
+                        <div class="attribute_name">Meeting Name</div>
+                        <div class="attribute_value">{{ meeting.content.Meeting.MeetingName | notapplicable }}</div>
+                    </div>
+                    <div class="meeting-attribute">
+                        <div class="attribute_name">Meeting Number</div>
+                        <div class="attribute_value">{{ meeting.content.Meeting.MeetingNumber | notapplicable }}</div>
+                    </div>
+                    <div class="meeting-attribute">
+                        <div class="attribute_name">Venue</div>
+                        <div class="attribute_value">{{ meeting.content.Meeting.Venue | notapplicable }}</div>
                     </div>
                     <div class="meeting-attribute">
                         <div class="attribute_name">Meeting Minutes details description</div>
-                        <div class="attribute_value">{{ minutes.MeetingMinutesDetailDesc | notapplicable }}</div>
+                        <div class="attribute_value" ng-bind-html="minutes.MeetingMinutesDetailDesc"></div>
                     </div>
                 </div>
             </div>
             <div class="mom-attribute-wrapper">
                 <div class="header">To do list</div>
                 <div class="todo" ng-repeat="todo in meeting.content.ToDoList">
-                    <div class="meeting-attribute">
+                    <!-- <div class="meeting-attribute">
                         <div class="attribute_name">To do list code</div>
                         <div class="attribute_value">{{ todo.ToDoListCode | notapplicable }}</div>
-                    </div>
+                    </div> -->
                     <div class="meeting-attribute">
                         <div class="attribute_name">to do description</div>
                         <div class="attribute_value">{{ todo.ToDoDescription | notapplicable }}</div>
                     </div>
-                    <div class="meeting-attribute">
+                    <!-- <div class="meeting-attribute">
                         <div class="attribute_name">reference type</div>
                         <div class="attribute_value">{{ todo.ReferenceType | notapplicable }}</div>
-                    </div>
-                    <div class="meeting-attribute">
+                    </div> -->
+                    <!-- <div class="meeting-attribute">
                         <div class="attribute_name">is active</div>
                         <div class="attribute_value">{{ todo.IsActive | notapplicable }}</div>
-                    </div>
-                    <div class="meeting-attribute">
+                    </div> -->
+                    <!-- <div class="meeting-attribute">
                         <div class="attribute_name">assigned to</div>
                         <div class="attribute_value">{{ todo.AsignedTo | notapplicable }}</div>
                     </div>
                     <div class="meeting-attribute">
                         <div class="attribute_name">percentage of finish</div>
                         <div class="attribute_value">{{ todo.PercentageOfFinish | notapplicable }}</div>
-                    </div>
+                    </div> -->
                     <div class="meeting-attribute">
                         <div class="attribute_name">subscription code</div>
                         <div class="attribute_value">{{ todo.SubscriptionCode | notapplicable }}</div>

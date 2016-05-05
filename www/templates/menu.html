@@ -3,14 +3,17 @@
         <ion-nav-bar class="bar-stable bar-bottom">
             <ion-nav-back-button>
             </ion-nav-back-button>
-            <ion-nav-buttons side="left">
+            <!-- <ion-nav-buttons side="left">
                 <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
                 </button>
+            </ion-nav-buttons> -->
+            <ion-nav-buttons side="right">
+                <button class="button button-icon button-clear ion-home" ui-sref="app.dashboard"></button>
             </ion-nav-buttons>
         </ion-nav-bar>
         <ion-nav-view name="menuContent"></ion-nav-view>
     </ion-side-menu-content>
-    <ion-side-menu side="left">
+    <!-- <ion-side-menu side="left">
         <ion-content class="menu-bottom">
             <ion-list class="menu-list">
                 <ion-item menu-close href="#/app/dashboard">
@@ -19,17 +22,17 @@
                 <ion-item menu-close href="#/app/meetings">
                     <i class="icon fi-calendar"></i>My Meetings
                 </ion-item>
-                <!-- <ion-item menu-close href="#/app/agenda">
+                <ion-item menu-close href="#/app/agenda">
                     <i class="icon fi-clipboard-notes"></i>Agenda
                 </ion-item>
                 <ion-item menu-close href="#/app/mom">
                     <i class="icon fi-address-book"></i>MOM
-                </ion-item> -->
+                </ion-item>
                 <ion-item menu-close href="#/app/aboutus">
                     <i class="icon ion-person"></i>About Us
                 </ion-item>
             </ion-list>
             <div class="avatar"></div>
         </ion-content>
-    </ion-side-menu>
+    </ion-side-menu> -->
 </ion-side-menus>
