@@ -6,19 +6,19 @@
                 <div class="mom" ng-repeat="minutes in meeting.content.Minutes">
                     <div class="meeting-attribute">
                         <div class="attribute_name">Subject Code</div>
-                        <div class="attribute_value">{{ minutes.SubjectCode }}</div>
+                        <div class="attribute_value">{{ minutes.SubjectCode | notapplicable }}</div>
                     </div>
                     <div class="meeting-attribute">
                         <div class="attribute_name">Meeting Code</div>
-                        <div class="attribute_value">{{ minutes.MeetingCode }}</div>
+                        <div class="attribute_value">{{ minutes.MeetingCode | notapplicable }}</div>
                     </div>
                     <div class="meeting-attribute">
                         <div class="attribute_name">Meeting Minutes detail code</div>
-                        <div class="attribute_value">{{ minutes.MeetingMinutesDetailCode }}</div>
+                        <div class="attribute_value">{{ minutes.MeetingMinutesDetailCode | notapplicable }}</div>
                     </div>
                     <div class="meeting-attribute">
                         <div class="attribute_name">Meeting Minutes details description</div>
-                        <div class="attribute_value">{{ minutes.MeetingMinutesDetailDesc }}</div>
+                        <div class="attribute_value">{{ minutes.MeetingMinutesDetailDesc | notapplicable }}</div>
                     </div>
                 </div>
             </div>
@@ -27,55 +27,55 @@
                 <div class="todo" ng-repeat="todo in meeting.content.ToDoList">
                     <div class="meeting-attribute">
                         <div class="attribute_name">To do list code</div>
-                        <div class="attribute_value">{{ todo.ToDoListCode }}</div>
+                        <div class="attribute_value">{{ todo.ToDoListCode | notapplicable }}</div>
                     </div>
                     <div class="meeting-attribute">
                         <div class="attribute_name">to do description</div>
-                        <div class="attribute_value">{{ todo.ToDoDescription }}</div>
+                        <div class="attribute_value">{{ todo.ToDoDescription | notapplicable }}</div>
                     </div>
                     <div class="meeting-attribute">
                         <div class="attribute_name">reference type</div>
-                        <div class="attribute_value">{{ todo.ReferenceType }}</div>
+                        <div class="attribute_value">{{ todo.ReferenceType | notapplicable }}</div>
                     </div>
                     <div class="meeting-attribute">
                         <div class="attribute_name">is active</div>
-                        <div class="attribute_value">{{ todo.IsActive }}</div>
+                        <div class="attribute_value">{{ todo.IsActive | notapplicable }}</div>
                     </div>
                     <div class="meeting-attribute">
                         <div class="attribute_name">assigned to</div>
-                        <div class="attribute_value">{{ todo.AsignedTo }}</div>
+                        <div class="attribute_value">{{ todo.AsignedTo | notapplicable }}</div>
                     </div>
                     <div class="meeting-attribute">
                         <div class="attribute_name">percentage of finish</div>
-                        <div class="attribute_value">{{ todo.PercentageOfFinish }}</div>
+                        <div class="attribute_value">{{ todo.PercentageOfFinish | notapplicable }}</div>
                     </div>
                     <div class="meeting-attribute">
                         <div class="attribute_name">subscription code</div>
-                        <div class="attribute_value">{{ todo.SubscriptionCode }}</div>
+                        <div class="attribute_value">{{ todo.SubscriptionCode | notapplicable }}</div>
                     </div>
                     <div class="meeting-attribute">
                         <div class="attribute_name">to do list reference code</div>
-                        <div class="attribute_value">{{ todo.ToDoListRefCode }}</div>
+                        <div class="attribute_value">{{ todo.ToDoListRefCode | notapplicable }}</div>
                     </div>
                     <div class="meeting-attribute">
                         <div class="attribute_name">Created by </div>
-                        <div class="attribute_value">{{ todo.CreatedBy }}</div>
+                        <div class="attribute_value">{{ todo.CreatedBy | notapplicable }}</div>
                     </div>
                     <div class="meeting-attribute">
                         <div class="attribute_name">action taken</div>
-                        <div class="attribute_value">{{ todo.ActionTacken }}</div>
+                        <div class="attribute_value">{{ todo.ActionTacken | notapplicable }}</div>
                     </div>
                     <div class="meeting-attribute">
                         <div class="attribute_name">username</div>
-                        <div class="attribute_value">{{ todo.UserName }}</div>
+                        <div class="attribute_value">{{ todo.UserName | notapplicable }}</div>
                     </div>
                     <div class="meeting-attribute">
                         <div class="attribute_name">status</div>
-                        <div class="attribute_value">{{ todo.Status }}</div>
+                        <div class="attribute_value">{{ todo.Status | notapplicable }}</div>
                     </div>
                     <div class="meeting-attribute">
                         <div class="attribute_name">Finished By</div>
-                        <div class="attribute_value">{{ todo.FinishedBy }}</div>
+                        <div class="attribute_value">{{ todo.FinishedBy | notapplicable }}</div>
                     </div>
                 </div>
             </div>

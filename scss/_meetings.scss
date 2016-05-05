@@ -1,14 +1,16 @@
+//Tab styles
 ion-tabs {
     .tabs {
-        top: 0;
-        background: $theme-background;
+        top: 0 !important;
+        background: $theme-background !important;
+        border-bottom: none !important;
         .tab-item {
             transition: 0.5s ease;
             border-bottom: 2.5px solid transparent;
             color: $theme-foreground;
             &.tab-item-active {
-                color: $theme-foreground;
-                border-bottom: 2.5px solid $theme-foreground;
+                color: $theme-foreground !important;
+                border-bottom: 2.5px solid $theme-foreground!important;
             }
             .tab-title {
                 font-family: $font-Lato;
@@ -17,10 +19,20 @@ ion-tabs {
     }
 }
 
+//meeting-list.html styles
 .meeting-list-content {
     @extend .background;
+    .list {
+        .card {
+            cursor: pointer;
+            &:active {
+                @include box-shadow(2px, 10px, 10px);
+            }
+        }
+    }
 }
 
+//Common style for table layout
 .meeting-attribute {
     border-bottom: 1px solid $theme-background;
     display: table;
@@ -28,7 +40,7 @@ ion-tabs {
     width: 100%;
     &:nth-child(odd) {
         // background: $theme-color-complement-two;
-        @include background-opacity($theme-background, 0.5);
+        @include background-opacity($theme-background, 0.15);
     }
     &:last-child {
         border-bottom: 0px;
@@ -52,52 +64,54 @@ ion-tabs {
     }
 }
 
+//First tab
 .detail-content {
     @extend .background;
+    bottom: 44px !important;
+    top: 49px !important;
     .meetings-wrapper {
         min-height: calc( 100vh - 44px - 49px);
         color: $theme-foreground;
-        .subject {
-            text-align: center;
-            font-size: 26px;
-            font-weight: bold;
-            padding: 10px 0;
-        }
         .meeting-attribute-wrapper {
-            margin: 0 10px;
-        }
-        .header {
-            text-align: center;
-            font-size: 26px;
-            font-weight: bold;
-            padding: 10px 0;
+            margin: 0;
         }
         .participation_wrapper {
             margin: 0 10px;
+            .participant {
+                border-top: 1px solid $theme-foreground;
+                border-bottom: 2px solid $theme-foreground;
+                margin: 5px 0;
+            }
         }
     }
 }
 
+//Second tab
 .agenda-content {
     @extend .background;
+    bottom: 44px !important;
+    top: 49px !important;
     .agenda-wrapper {
         min-height: calc( 100vh - 44px - 49px);
         color: $theme-foreground;
+        .agenda-attribute-wrapper {
+            .agenda {
+                border-bottom: 1px solid $theme-foreground;
+                border-top: 2.5px solid $theme-foreground;
+                margin: 10px 0;
+            }
+        }
     }
 }
 
+// Third tab
 .mom-content {
     @extend .background;
+    bottom: 44px !important;
+    top: 49px !important;
     .mom-wrapper {
         min-height: calc( 100vh - 44px - 49px);
         color: $theme-foreground;
     }
-    .mom-attribute-wrapper {
-        .header {
-            text-align: center;
-            font-size: 26px;
-            font-weight: bold;
-            padding: 10px 0;
-        }
-    }
+    .mom-attribute-wrapper {}
 }

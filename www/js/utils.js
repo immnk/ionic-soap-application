@@ -8,9 +8,12 @@ function Core() {
     provider.$get = Factory;
     return provider;
 
-    Factory.$inject = ['$q', '$http', '$rootScope', '$ionicPopup', '$ionicLoading', '$ionicHistory', '$ionicSideMenuDelegate', 'Logger', 'LocalStorage', MEETINGS.MESSAGES];
+    Factory.$inject = ['$q', '$http', '$rootScope', '$ionicPopup', '$ionicLoading', 
+        '$ionicHistory', '$ionicSideMenuDelegate', '$timeout', 'Logger', 'LocalStorage', 
+        MEETINGS.MESSAGES];
 
-    function Factory($q, $http, $rootScope, $ionicPopup, $ionicLoading, $ionicHistory, $ionicSideMenuDelegate, Logger, LocalStorage, MEETINGS_MESSAGES) {
+    function Factory($q, $http, $rootScope, $ionicPopup, $ionicLoading, $ionicHistory, 
+        $ionicSideMenuDelegate, $timeout, Logger, LocalStorage, MEETINGS_MESSAGES) {
         var service = {};
 
         service.Logger = Logger;
@@ -55,7 +58,7 @@ function Core() {
         }
 
         function hideSpinner() {
-            $ionicLoading.hide();
+            $timeout($ionicLoading.hide(), 1000);
         }
 
         function callBackend(requestType, methodName, requestData, headers) {

@@ -6,6 +6,7 @@ var MEETINGS = {
         CONTROLLERS: "meetings.controllers",
         FACTORIES: "meetings.factories",
         DIRECTIVES: "meetings.directives",
+        FILTERS: "meetings.filters",
         UTILS: "meetings.utils",
         MESSAGES: "meetings.messages",
         LOGGER: "Logger",
@@ -109,10 +110,11 @@ var MEETINGS = {
     }
 };
 
+var messages = angular.module(MEETINGS.MODULE_NAMES.MESSAGES, []);
 var controllers = angular.module(MEETINGS.MODULE_NAMES.CONTROLLERS, []);
 var factories = angular.module(MEETINGS.MODULE_NAMES.FACTORIES, ['angularSoap']);
 var directives = angular.module(MEETINGS.MODULE_NAMES.DIRECTIVES, []);
+var filters = angular.module(MEETINGS.MODULE_NAMES.FILTERS, []);
 var utils = angular.module(MEETINGS.MODULE_NAMES.UTILS, [MEETINGS.MODULE_NAMES.LOGGER, MEETINGS.MODULE_NAMES.LOCAL_STORAGE]);
-var messages = angular.module(MEETINGS.MODULE_NAMES.MESSAGES, []);
 var logger = angular.module(MEETINGS.MODULE_NAMES.LOGGER, []);
 var localStorage = angular.module(MEETINGS.MODULE_NAMES.LOCAL_STORAGE, []);

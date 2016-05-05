@@ -11,12 +11,14 @@ function MeetingsFactory($soap, $q, utils) {
     service.getCurrentMeetingCode = getCurrentMeetingCode;
     service.setCurrentMeetingCode = setCurrentMeetingCode;
 
-    function getCurrentMeetingCode(){
+    function getCurrentMeetingCode() {
         return service.meetingCode;
     }
 
-    function setCurrentMeetingCode(meetingCode){
+    function setCurrentMeetingCode(meetingCode) {
+        utils.Logger.debug(MEETINGS.FACTORIES.MeetingsFactory + " - setCurrentMeetingCode start : " + meetingCode);
         service.meetingCode = meetingCode;
+        utils.Logger.debug(MEETINGS.FACTORIES.MeetingsFactory + " - setCurrentMeetingCode end");
     }
 
     function getMeetingList() {
@@ -24,7 +26,6 @@ function MeetingsFactory($soap, $q, utils) {
 
         $soap.post(MEETINGS.BACK_END.RootURL, MEETINGS.BACK_END.MethodName.getMeetingList)
             .then(function(response) {
-                // utils.Logger.success(response);
 
                 var x2js = new X2JS();
                 var aftCnv = x2js.xml_str2json(response);
@@ -32,8 +33,7 @@ function MeetingsFactory($soap, $q, utils) {
                 if (aftCnv.DataSet.diffgram.NewDataSet) {
                     var meetings = aftCnv.DataSet.diffgram.NewDataSet.Meeting;
                     var result = [];
-                    // utils.Logger.debug(meetings);
-                    
+
                     for (i = 0; i < meetings.length; i++) {
                         var temp = meetings[i];
                         var meeting = {};
@@ -76,70 +76,70 @@ function MeetingsFactory($soap, $q, utils) {
         };
         $soap.post(MEETINGS.BACK_END.RootURL, MEETINGS.BACK_END.MethodName.getMeetingByMeetingCode, parameters)
             .then(function(response) {
-                
+
                 var x2js = new X2JS();
                 var aftCnv = x2js.xml_str2json(response);
 
-                if(aftCnv.DataSet.diffgram.NewDataSet){
+                if (aftCnv.DataSet.diffgram.NewDataSet) {
                     var meetingDetail = aftCnv.DataSet.diffgram.NewDataSet;
                     var result = {};
-                    utils.Logger.debug(meetingDetail);
+                    // utils.Logger.debug(meetingDetail);
 
-                    if(meetingDetail.Agenda){
-                        if(meetingDetail.Agenda.constructor === Array){
+                    if (meetingDetail.Agenda) {
+                        if (meetingDetail.Agenda.constructor === Array) {
                             result.Agenda = meetingDetail.Agenda;
-                        }else{
+                        } else {
                             result.Agenda = [];
                             result.Agenda.push(meetingDetail.Agenda);
                         }
-                    } else{
+                    } else {
                         result.Agenda = [];
                     }
 
-                    if(meetingDetail.Minutes){
-                        if(meetingDetail.Minutes.constructor === Array){
+                    if (meetingDetail.Minutes) {
+                        if (meetingDetail.Minutes.constructor === Array) {
                             result.Minutes = meetingDetail.Minutes;
-                        }else{
+                        } else {
                             result.Minutes = [];
                             result.Minutes.push(meetingDetail.Minutes);
                         }
-                    } else{
+                    } else {
                         result.Minutes = [];
                     }
 
-                    if(meetingDetail.ToDoList){
-                        if(meetingDetail.ToDoList.constructor === Array){
+                    if (meetingDetail.ToDoList) {
+                        if (meetingDetail.ToDoList.constructor === Array) {
                             result.ToDoList = meetingDetail.ToDoList;
-                        }else{
+                        } else {
                             result.ToDoList = [];
                             result.ToDoList.push(meetingDetail.ToDoList);
                         }
-                    } else{
+                    } else {
                         result.ToDoList = [];
                     }
 
                     result.Meeting = meetingDetail.Meeting ? meetingDetail.Meeting : {};
                     result.MeetingExternalUser = meetingDetail.MeetingExternalUser ? meetingDetail.MeetingExternalUser : {};
-                    
-                    if(meetingDetail.MeetingParticipant){
-                        if(meetingDetail.MeetingParticipant.constructor === Array){
+
+                    if (meetingDetail.MeetingParticipant) {
+                        if (meetingDetail.MeetingParticipant.constructor === Array) {
                             result.MeetingParticipant = meetingDetail.MeetingParticipant;
-                        }else{
+                        } else {
                             result.MeetingParticipant = [];
                             result.MeetingParticipant.push(meetingDetail.MeetingParticipant);
                         }
-                    } else{
+                    } else {
                         result.MeetingParticipant = [];
                     }
 
                     utils.Logger.success(result);
                     deferred.resolve(result);
-                } else{
+                } else {
                     utils.Logger.error(aftCnv);
                     deferred.reject('Invalid response');
                 }
-
             }, function(error) {
+                utils.Logger.error(error);
                 deferred.reject(error);
             });
 

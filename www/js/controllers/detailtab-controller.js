@@ -1,14 +1,7 @@
 controllers.controller(MEETINGS.CONTROLLERS.DetailTabController, DetailTabController);
 
-DetailTabController.inject = ['$scope'];
+DetailTabController.inject = ['$scope', 'utils'];
 
-function DetailTabController($scope){
-	// $scope.meeting = {
-	// 	content: {
-	// 		Meeting: {
-				
-	// 		}
-	// 	}
-	// };
-	// $scope.meet = $scope.meeting.content.Meeting;
+function DetailTabController($scope, utils){
+	utils.Logger.debug(MEETINGS.CONTROLLERS.DetailTabController + " - init");
 }

@@ -9,10 +9,17 @@ body {
 
 .background, .dashboard-wrapper, .meeting-list-content, .detail-content, .agenda-content, .mom-content {
   background: #2A5A8B;
-  background: -webkit-gradient(rgba(42, 90, 139, 0.3), rgba(42, 90, 139, 0.5)), url("../img/Background.jpg") no-repeat;
-  background: linear-gradient(rgba(42, 90, 139, 0.3), rgba(42, 90, 139, 0.5)), url("../img/Background.jpg") no-repeat;
+  background: -webkit-gradient(rgba(125, 125, 125, 0.3), rgba(110, 110, 110, 0.5)), url("../img/Background.jpg") no-repeat;
+  background: linear-gradient(rgba(125, 125, 125, 0.3), rgba(110, 110, 110, 0.5)), url("../img/Background.jpg") no-repeat;
   background-size: cover;
   background-attachment: fixed; }
+
+.header {
+  text-align: center;
+  font-size: 26px;
+  font-weight: bold;
+  padding: 10px 0;
+  text-transform: capitalize; }
 
 ion-side-menus ion-side-menu-content .bar-bottom {
   position: absolute;
@@ -44,9 +51,6 @@ ion-side-menus ion-side-menu .menu-bottom {
 ion-side-menus ion-content {
   top: 0px !important;
   bottom: 44px !important; }
-ion-side-menus .has-tabs {
-  bottom: 44px;
-  top: 49px !important; }
 
 .dashboard-wrapper {
   min-height: calc(100vh - 44px);
@@ -82,17 +86,25 @@ ion-side-menus .has-tabs {
         transform: translateY(5px); }
 
 ion-tabs .tabs {
-  top: 0;
-  background: #2A5A8B; }
+  top: 0 !important;
+  background: #2A5A8B !important;
+  border-bottom: none !important; }
   ion-tabs .tabs .tab-item {
     transition: 0.5s ease;
     border-bottom: 2.5px solid transparent;
     color: #FFF; }
     ion-tabs .tabs .tab-item.tab-item-active {
-      color: #FFF;
-      border-bottom: 2.5px solid #FFF; }
+      color: #FFF !important;
+      border-bottom: 2.5px solid #FFF !important; }
     ion-tabs .tabs .tab-item .tab-title {
       font-family: "Lato", "sans-serif"; }
+
+.meeting-list-content .list .card {
+  cursor: pointer; }
+  .meeting-list-content .list .card:active {
+    -webkit-box-shadow: 2px 10px 10px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 2px 10px 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 2px 10px 10px rgba(0, 0, 0, 0.5); }
 
 .meeting-attribute {
   border-bottom: 1px solid #2A5A8B;
@@ -118,35 +130,33 @@ ion-tabs .tabs {
     text-align: left;
     font-family: "Lato", "sans-serif"; }
 
-.detail-content .meetings-wrapper {
-  min-height: calc( 100vh - 44px - 49px);
-  color: #FFF; }
-  .detail-content .meetings-wrapper .subject {
-    text-align: center;
-    font-size: 26px;
-    font-weight: bold;
-    padding: 10px 0; }
-  .detail-content .meetings-wrapper .meeting-attribute-wrapper {
-    margin: 0 10px; }
-  .detail-content .meetings-wrapper .header {
-    text-align: center;
-    font-size: 26px;
-    font-weight: bold;
-    padding: 10px 0; }
-  .detail-content .meetings-wrapper .participation_wrapper {
-    margin: 0 10px; }
+.detail-content {
+  bottom: 44px !important;
+  top: 49px !important; }
+  .detail-content .meetings-wrapper {
+    min-height: calc( 100vh - 44px - 49px);
+    color: #FFF; }
+    .detail-content .meetings-wrapper .meeting-attribute-wrapper {
+      margin: 0 10px; }
+    .detail-content .meetings-wrapper .participation_wrapper {
+      margin: 0 10px; }
+      .detail-content .meetings-wrapper .participation_wrapper .participant {
+        border-top: 1px solid #FFF;
+        border-bottom: 2px solid #FFF;
+        margin: 5px 0; }
 
-.agenda-content .agenda-wrapper {
-  min-height: calc( 100vh - 44px - 49px);
-  color: #FFF; }
+.agenda-content {
+  bottom: 44px !important;
+  top: 49px !important; }
+  .agenda-content .agenda-wrapper {
+    min-height: calc( 100vh - 44px - 49px);
+    color: #FFF; }
 
-.mom-content .mom-wrapper {
-  min-height: calc( 100vh - 44px - 49px);
-  color: #FFF; }
-.mom-content .mom-attribute-wrapper .header {
-  text-align: center;
-  font-size: 26px;
-  font-weight: bold;
-  padding: 10px 0; }
+.mom-content {
+  bottom: 44px !important;
+  top: 49px !important; }
+  .mom-content .mom-wrapper {
+    min-height: calc( 100vh - 44px - 49px);
+    color: #FFF; }
 
 /*# sourceMappingURL=style.css.map */

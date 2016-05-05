@@ -1,4 +1,7 @@
-angular.module(MEETINGS.APP_NAME, ['ionic','ionic.service.core',  'ionic.service.analytics', MEETINGS.MODULE_NAMES.CONTROLLERS, MEETINGS.MODULE_NAMES.FACTORIES, MEETINGS.MODULE_NAMES.UTILS, MEETINGS.MODULE_NAMES.DIRECTIVES, MEETINGS.MODULE_NAMES.MESSAGES])
+angular.module(MEETINGS.APP_NAME, ['ionic','ionic.service.core',  'ionic.service.analytics', 
+    MEETINGS.MODULE_NAMES.CONTROLLERS, MEETINGS.MODULE_NAMES.FACTORIES, 
+    MEETINGS.MODULE_NAMES.UTILS, MEETINGS.MODULE_NAMES.DIRECTIVES, 
+    MEETINGS.MODULE_NAMES.FILTERS, MEETINGS.MODULE_NAMES.MESSAGES])
 
 .run(function($ionicPlatform, $ionicAnalytics, utils) {
     $ionicPlatform.ready(function() {
@@ -59,7 +62,8 @@ angular.module(MEETINGS.APP_NAME, ['ionic','ionic.service.core',  'ionic.service
                         controller: MEETINGS.STATES.MEETINGDETAIL.controller
                     }
                 },
-                abstract: true
+                abstract: true,
+                cache: false
             })
             .state(MEETINGS.STATES.DETAIL.name, {
                 url: MEETINGS.STATES.DETAIL.url,

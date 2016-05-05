@@ -6,15 +6,15 @@ MeetingDetailController.inject = ['$scope', 'utils', '$stateParams', MEETINGS.FA
 
 function MeetingsController($scope, utils, $state, MeetingsFactory) {
 
-init();
+    init();
 
     $scope.meetings = [];
     $scope.navigateState = navigateState;
 
     function init() {
-    	utils.Logger.debug(MEETINGS.CONTROLLERS.MeetingsController + ' - : init');
+        utils.Logger.debug(MEETINGS.CONTROLLERS.MeetingsController + ' - : init');
         utils.showSpinner();
-        
+
         MeetingsFactory.getMeetingList().then(function(response) {
             utils.hideSpinner();
             $scope.meetings = response;
@@ -24,32 +24,36 @@ init();
         });
     }
 
-    function navigateState(meetingId){
+    function navigateState(meetingId) {
         MeetingsFactory.setCurrentMeetingCode(meetingId);
         $state.go(MEETINGS.STATES.DETAIL.name);
     }
 }
 
-function MeetingDetailController($scope, utils, $stateParams, MeetingsFactory) {
+function MeetingDetailController($scope, utils, MeetingsFactory) {
 
     $scope.meeting = {};
 
-    init();
+    $scope.init = init;
+    $scope.init();
 
     function init() {
         utils.Logger.debug(MEETINGS.CONTROLLERS.MeetingDetailController + ' - : init');
+        // utils.showSpinner();
+        
         $scope.meeting.subject = "Meeting detail";
         var meetingCode = MeetingsFactory.getCurrentMeetingCode();
 
-        utils.Logger.debug(MEETINGS.CONTROLLERS.MeetingDetailController + ' - : init - meetingId' + meetingCode);
-        utils.showSpinner();
-
+        utils.Logger.debug(MEETINGS.CONTROLLERS.MeetingDetailController + ' - : init - meetingId - ' + meetingCode);
+        
         MeetingsFactory.getMeetingByCode(meetingCode).then(function(response) {
-        	utils.hideSpinner();
             $scope.meeting.content = response;
-        }, function(error){
-        	utils.hideSpinner();
-        	utils.showAlert(utils.MEETINGS_MESSAGES.NETWORK_ERROR, error);
+            // utils.hideSpinner();
+            utils.Logger.debug(MEETINGS.CONTROLLERS.MeetingDetailController + ' - got meeting details.');
+        }, function(error) {
+            utils.Logger.debug(MEETINGS.CONTROLLERS.MeetingDetailController + ' - error in getting meeting details');
+            // utils.hideSpinner();
+            utils.showAlert(utils.MEETINGS_MESSAGES.NETWORK_ERROR, error);
         });
     }
 

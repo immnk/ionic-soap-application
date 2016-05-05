@@ -3,8 +3,10 @@ $theme-background-overlay: rgba(42, 90, 139, 0.2);
 $theme-foreground: #FFF;
 // $theme-color-complement-two: #EFEFEF;
 // $theme-border: #EFEFEF;
-$font-Lato: "Lato", "sans-serif";
-$font-montserrat: "Montserrat", "sans-serif";
+$font-Lato: "Lato",
+"sans-serif";
+$font-montserrat: "Montserrat",
+"sans-serif";
 @mixin background-opacity($color, $opacity: 0.3) {
     background: $color;
     /* The Fallback */
@@ -41,6 +43,15 @@ body {
 
 .background {
     @include vertical-gradient-with-image(url('../img/Background.jpg'),
-    rgba(42, 90, 139, 0.3),
-    rgba(42, 90, 139, 0.5));
+    rgba(125, 125, 125, 0.3),
+    rgba(110, 110, 110, 0.5));
+}
+
+.header {
+    text-align: center;
+    font-size: 26px;
+    font-weight: bold;
+    padding: 10px 0;
+    text-transform: capitalize;
+    line-height: 26px;
 }
