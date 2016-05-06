@@ -169,5 +169,9 @@ ion-tabs .tabs {
 
 .conduct-meeting .conduct-wrapper {
   margin: 10px 10px 0; }
+  .conduct-meeting .conduct-wrapper .row {
+    padding: 0 5px; }
+    .conduct-meeting .conduct-wrapper .row .col {
+      padding: 0 5px; }
 
 /*# sourceMappingURL=style.css.map */

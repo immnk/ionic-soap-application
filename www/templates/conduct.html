@@ -6,8 +6,14 @@
                     <input type="text" placeholder="File Name" ng-model="record.file">
                 </label>
             </div>
-            <button class="button icon-left ion-android-microphone button-positive" ng-click="startrecording()">Record</button>
-            <button class="button icon-left ion-ios-play button-positive" ng-click="play()">Play</button>
+            <div class="row">
+                <div class="col">
+                    <button class="button icon-left ion-android-microphone button-positive button-block" ng-click="startrecording()">Record</button>
+                </div>
+                <div class="col">
+                    <button class="button icon-left ion-ios-play button-positive button-block" ng-click="play()">Play</button>
+                </div>
+            </div>
             <button class="button icon-left ion-ios-download button-balanced button-block">Save</button>
         </div>
     </ion-content>

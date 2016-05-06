@@ -5,6 +5,8 @@ messages.constant(MEETINGS.MESSAGES, {
     GENERIC_ERROR: "A generic error has occurred. Please try again later",
     UNAUTHORIZED: "Your are not authorized. Please check your credentials",
     NOT_APPLICABLE : "N/A",
+    PLAY_ERROR: "Can't play",
+    RECORD_SOUND_ERROR: "Please record a sound before playing it",
     MAIN : {
     	NO_RESULTS : "None of the records match your search."
     },

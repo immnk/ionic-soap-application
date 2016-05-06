@@ -1,9 +1,11 @@
 filters.filter('notapplicable', NotApplicable);
 
-function NotApplicable() {
+NotApplicable.inject = ['utils'];
+
+function NotApplicable(utils) {
     return function(input) {
         if (!input || 0 === input.length) {
-            return 'N/A';
+            return utils.MEETINGS_MESSAGES.NOT_APPLICABLE;
         } else
             return input;
     }

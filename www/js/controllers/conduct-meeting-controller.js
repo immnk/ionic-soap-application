@@ -23,7 +23,8 @@ function ConductMeetingController($scope, utils) {
 
     $scope.play = function() {
         if (!$scope.record.file) {
-            navigator.notification.alert("Record a sound first.", null, "Error");
+            utils.showAlert(utils.MEETINGS_MESSAGES.PLAY_ERROR, 
+                utils.MEETINGS_MESSAGES.RECORD_SOUND_ERROR);
             return;
         }
         var media = new Media($scope.sound.file, function(e) {

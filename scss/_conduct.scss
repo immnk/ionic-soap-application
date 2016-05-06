@@ -1,6 +1,12 @@
-.conduct-meeting{
-	@extend .background;
-	.conduct-wrapper{
-		margin: 10px 10px 0;
-	}
+.conduct-meeting {
+    @extend .background;
+    .conduct-wrapper {
+        margin: 10px 10px 0;
+        .row {
+            padding: 0 5px;
+            .col {
+                padding: 0 5px;
+            }
+        }
+    }
 }
