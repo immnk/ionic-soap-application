@@ -24,6 +24,10 @@ ion-tabs {
     @extend .background;
     .list {
         .card {
+            .item-divider {
+                font-size: 14px;
+                color: #666;
+            }
             cursor: pointer;
             &:active {
                 @include box-shadow(2px, 10px, 10px);
