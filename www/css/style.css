@@ -7,7 +7,7 @@
 body {
   font-family: "Montserrat", "sans-serif"; }
 
-.background, .dashboard-wrapper, .meeting-list-content, .detail-content, .agenda-content, .mom-content {
+.background, .dashboard-wrapper, .meeting-list-content, .detail-content, .agenda-content, .mom-content, .conduct-meeting {
   background: #2A5A8B;
   background: -webkit-gradient(rgba(125, 125, 125, 0.3), rgba(110, 110, 110, 0.5)), url("../img/Background.jpg") no-repeat;
   background: linear-gradient(rgba(125, 125, 125, 0.3), rgba(110, 110, 110, 0.5)), url("../img/Background.jpg") no-repeat;
@@ -163,5 +163,8 @@ ion-tabs .tabs {
   .mom-content .mom-wrapper {
     min-height: calc( 100vh - 44px - 49px);
     color: #FFF; }
+
+.conduct-meeting .conduct-wrapper {
+  margin: 10px 10px 0; }
 
 /*# sourceMappingURL=style.css.map */

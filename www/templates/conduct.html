@@ -1,5 +1,14 @@
 <ion-view view-title="Conduct meeting">
-	<ion-content>
-		THis is screen for recording the meeting....
-	</ion-content>
+    <ion-content class="conduct-meeting">
+        <div class="conduct-wrapper">
+            <div class="list">
+                <label class="item item-input">
+                    <input type="text" placeholder="File Name" ng-model="record.file">
+                </label>
+            </div>
+            <button class="button icon-left ion-android-microphone button-positive" ng-click="startrecording()">Record</button>
+            <button class="button icon-left ion-ios-play button-positive" ng-click="play()">Play</button>
+            <button class="button icon-left ion-ios-download button-balanced button-block">Save</button>
+        </div>
+    </ion-content>
 </ion-view>
