@@ -3,7 +3,7 @@
         <div class="conduct-wrapper">
             <div class="list">
                 <label class="item item-input">
-                    <input type="text" placeholder="File Name" ng-model="record.file">
+                    <input type="text" placeholder="File Name" ng-model="sound.file">
                 </label>
             </div>
             <div class="row">
@@ -14,7 +14,7 @@
                     <button class="button icon-left ion-ios-play button-positive button-block" ng-click="play()">Play</button>
                 </div>
             </div>
-            <button class="button icon-left ion-ios-download button-balanced button-block">Save</button>
+            <button class="button icon-left ion-ios-download button-balanced button-block" ng-click="save()">Save</button>
         </div>
     </ion-content>
 </ion-view>

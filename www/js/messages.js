@@ -7,6 +7,7 @@ messages.constant(MEETINGS.MESSAGES, {
     NOT_APPLICABLE : "N/A",
     PLAY_ERROR: "Can't play",
     RECORD_SOUND_ERROR: "Please record a sound before playing it",
+    SOUNDS_KEY: "MYSOUNDBOARD",
     MAIN : {
     	NO_RESULTS : "None of the records match your search."
     },

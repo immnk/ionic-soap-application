@@ -25,6 +25,7 @@ var MEETINGS = {
     },
     FACTORIES: {
         MeetingsFactory: "MeetingsFactory",
+        SoundsFactory: "SoundsFactory",
         Logger: "Logger",
         LocalStorage: "LocalStorage"
     },
