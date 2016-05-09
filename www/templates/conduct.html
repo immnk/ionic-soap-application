@@ -3,10 +3,11 @@
         <div class="conduct-wrapper">
             <div class="list">
                 <label class="item item-input">
-                    <input type="text" placeholder="File Name" ng-model="sound.file">
+                    <input type="text" placeholder="File Name" ng-model="sound.name">
                 </label>
             </div>
-            <div class="row">
+
+            <!-- <div class="row">
                 <div class="col">
                     <button class="button icon-left ion-android-microphone button-positive button-block" ng-click="startrecording()">Record</button>
                 </div>
@@ -14,7 +15,26 @@
                     <button class="button icon-left ion-ios-play button-positive button-block" ng-click="play()">Play</button>
                 </div>
             </div>
-            <button class="button icon-left ion-ios-download button-balanced button-block" ng-click="save()">Save</button>
+            <div class="row">
+                <div class="col">
+                    <button class="button icon-left ion-ios-download button-balanced button-block" ng-click="save()">Save</button>
+                </div>
+            </div> -->
+
+            <div class="row">
+                <div class="col">
+                    <button class="button icon-left ion-android-microphone button-positive button-block" ng-click="startrecording()" ng-disabled="sound.started">Start</button>
+                </div>
+                <div class="col">
+                    <button class="button icon-left ion-ios-play button-positive button-block" ng-click="stoprecording()" ng-disabled="!sound.started">Stop</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <button class="button icon-left ion-ios-download button-balanced button-block" ng-click="playrecording()">Play</button>
+                </div>
+            </div>
+
         </div>
     </ion-content>
 </ion-view>

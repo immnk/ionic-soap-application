@@ -1,4 +1,5 @@
-angular.module(MEETINGS.APP_NAME, ['ionic','ionic.service.core',  'ionic.service.analytics', 
+angular.module(MEETINGS.APP_NAME, ['ionic','ionic.service.core', 
+    'ionic.service.analytics', 'ngCordova',
     MEETINGS.MODULE_NAMES.CONTROLLERS, MEETINGS.MODULE_NAMES.FACTORIES, 
     MEETINGS.MODULE_NAMES.UTILS, MEETINGS.MODULE_NAMES.DIRECTIVES, 
     MEETINGS.MODULE_NAMES.FILTERS, MEETINGS.MODULE_NAMES.MESSAGES])
